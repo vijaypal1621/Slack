@@ -1,13 +1,13 @@
 
 import React from 'react';
-
 import './App.css';
+import Header from './Header';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>hello web developer</h1>
-      {/* Header */}
+      <Header />
       {/* Sidebar */}
       {/* React-Router ->chat-screen*/}
     </div>
