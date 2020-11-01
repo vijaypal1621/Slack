@@ -14,11 +14,14 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
 import db from './firebase';
+import { useStateValue } from './StateProvider';
+
 
 
 function Sidebar() {
 
     const [channels ,setChannels] = useState([]);
+    const [{user}] = useStateValue();
 
     useEffect(() => {
         // run this code ONCE when sidebar component loads
@@ -42,7 +45,7 @@ function Sidebar() {
                     <h2>Software Developer</h2>
                     <h3>
                     <FiberManualRecordIcon />
-                    Vijay PAL
+                        {user?.displayName}
                     </h3>
                 </div>
                 <CreateIcon/>                

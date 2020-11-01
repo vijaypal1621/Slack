@@ -30,14 +30,15 @@ function Chat() {
               .onSnapshot( (snapshot)=> 
               setRoomDetails(snapshot.data()) 
               )
+              db.collection('rooms').doc(roomId)
+              .collection('messages')
+              .orderBy('timestamp', 'asc')
+              .onSnapshot((snapshot) => setRoomMessages( 
+                      snapshot.docs.map(doc => doc.data() )
+                  )
+              )
         }
-        db.collection('rooms').doc(roomId)
-           .collection('messages')
-           .orderBy('timestamp', 'asc')
-           .onSnapshot((snapshot) => setRoomMessages( 
-                   snapshot.docs.map(doc => doc.data() )
-               )
-           )
+        
         
     }, [roomId]);
     console.log(roomDetails);
