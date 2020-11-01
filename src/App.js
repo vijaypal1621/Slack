@@ -18,7 +18,7 @@ function App() {
         {
           !user ? (<Login />) : 
           (
-         <Login>  
+           <>
             <Header />
             <div className="app__body">
                 {/* Sidebar */}
@@ -34,7 +34,7 @@ function App() {
 
                 {/* React-Router ->chat-screen*/}
             </div>
-         </Login>
+          </>
          )}
         </Router>
    </div>
