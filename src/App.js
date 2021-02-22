@@ -1,5 +1,5 @@
 
-import React,{useState} from 'react';
+import React from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Header from './Header';
@@ -11,7 +11,7 @@ import Login from './Login';
 function App() {
 
   // const [user,setUser] = useState(null);
-  const [{ user } ,dispatch] = useStateValue();
+  const [{ user } ] = useStateValue();
 
 
   return (

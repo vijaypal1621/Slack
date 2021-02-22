@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./Chat.css";
 import Message from './Message';
-import {useHistory, useParams} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import db from './firebase';

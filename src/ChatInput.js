@@ -2,20 +2,21 @@ import React,{useState} from 'react';
 import './ChatInput.css';
 import db from './firebase';
 import { useStateValue } from './StateProvider';
-import firebase from 'firebase';
+
 
 
 function ChatInput({channelName , channelId}) {
 
     const [input , setInput] = useState('');
     const [{user}] = useStateValue();
-
+    console.log(user.uid);
     const sendMessage = (e) => {
         console.log(channelId);
         e.preventDefault();
         if(channelId){
             db.collection('rooms').doc(channelId)
               .collection('messages').add({
+                    id:user?.uid,
                     message:input,
                     timestamp:new Date() ,
                     user:user.displayName,
@@ -31,6 +32,7 @@ function ChatInput({channelName , channelId}) {
             });
             
         }
+        setInput('');
     };
 
     return (
